@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head >
+    <meta charset="UTF-8">
+    <title>{{ someText }}</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css" />
+</head>
+<body class="container" >
+
+<h1>First Angular Page</h1>
+<div class="form-group">
+    <label for="someText" class="control-label">Enter some text:</label>
+    <input name="someText" id="someText" ng-model="someText" />
+</div>
+<label class="alert alert-info">{{ someText }}</label>
+
+<!--jQuery -->
+<script src="javascripts/jquery-3.1.1.min.js"></script>
+
+<!-- AngularJS -->
+<script src="javascripts/angular.min.js"></script>
+
+</body>
+</html>
