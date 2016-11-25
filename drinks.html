@@ -13,17 +13,20 @@
         <h1>Angular Drinks List</h1>
         <section class="jumbotron">
             <h2>Add a New Drink</h2>
-            <form>
+            <form ng-submit="addDrink()">
                 <label for="drinkName">Name:</label>
-                <input name="drinkName" id="drinkName" />
+                <input name="drinkName" id="drinkName" ng-model="drinkName" />
                 <button class="btn btn-success">Add Drink</button>
             </form>
         </section>
         <section>
-            <h2>Current Drinks</h2>
+            <h2>{{ drinks.length }} Current Drinks</h2>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="d in drinks">
-                    {{ d }}
+                <li class="list-group-item" ng-repeat="d in drinks track by $index">
+                    <label class="col-sm-4">
+                        {{ d }}
+                    </label>
+                    <button class="btn btn-danger" ng-click="removeDrink()">Delete</button>
                 </li>
             </ul>
         </section>

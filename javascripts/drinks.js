@@ -8,4 +8,18 @@ angular.module('DrinksApp', [])
         // create an initial drinks list
         $scope.drinks = ["Smirnoff Ice", "Coors Light", "Molson Canadian", "Chardonnay"];
 
+        // add a new drink
+        $scope.addDrink = function() {
+            $scope.drinks.push($scope.drinkName);
+
+            // clear the textbox
+            $scope.drinkName = '';
+        };
+
+        // remove a drink from the list
+        $scope.removeDrink = function() {
+            if (confirm('This drink is delicious!  Are you really that crazy??')) {
+                $scope.drinks.splice(this.$index,1);
+            }
+        };
     });
