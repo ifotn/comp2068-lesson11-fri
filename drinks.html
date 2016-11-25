@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drinks SPA with Angular 1</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css" />
+</head>
+<body>
+
+    <main class="container" ng-app="DrinksApp" ng-controller="DrinksController">
+        <h1>Angular Drinks List</h1>
+        <section class="jumbotron">
+            <h2>Add a New Drink</h2>
+            <form>
+                <label for="drinkName">Name:</label>
+                <input name="drinkName" id="drinkName" />
+                <button class="btn btn-success">Add Drink</button>
+            </form>
+        </section>
+        <section>
+            <h2>Current Drinks</h2>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="d in drinks">
+                    {{ d }}
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!--Angular Library-->
+    <script src="javascripts/angular.min.js"></script>
+
+    <!--Custom Angular script-->
+    <script src="javascripts/drinks.js"></script>
+</body>
+</html>
